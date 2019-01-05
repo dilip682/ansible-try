@@ -22,5 +22,6 @@
       service:
         name: httpd
         state: restarted
+        enabled: true
 
         
