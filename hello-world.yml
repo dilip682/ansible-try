@@ -6,4 +6,15 @@
         msg: "Hello World"
     - name: List hostname
       shell: ls $HOME
+    - name: Install HTTPD
+      yum:
+        name: httpd
+        state: latest
+        notify: Restart HTTPD
+    - name: Restart HTTPD
+      service:
+        name: httpd
+        state: restarted
+      register: result
+    - debug: var=result
         
