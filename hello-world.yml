@@ -13,10 +13,10 @@
       yum:
         name: httpd
         state: latest
-      register: result
-    - debug: var=result
       notify: 
       - name: Restart HTTPD
+      register: result
+    - debug: var=result
   handlers:
     - name: Restart HTTPD
       service:
